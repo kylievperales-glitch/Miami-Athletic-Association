@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/*
+ * MAA design tokens.
+ * Sky, green and sun are measured from the logo. Blue, navy, green and pine are
+ * deeper steps of those hues, so text and buttons pass WCAG AA on light surfaces.
+ * Merman skin, tuxedo grey and pineapple tones are deliberately left out.
+ */
+@theme {
+  --color-ink: #10171d;
+  --color-muted: #4e5861;
+  --color-line: #dcdbd3;
+  --color-paper: #f6f5f0;
+
+  --color-sky: #48a8e0;
+  --color-blue: #0f5e9c;
+  --color-navy: #0b2c48;
+  --color-green: #1b7a4b;
+  --color-pine: #0e4431;
+  --color-sun: #f2e85c;
+
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-instrument), "Helvetica Neue", Arial, sans-serif;
+
+  --ease-out-athletic: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--color-sun);
+}
+
+::selection {
+  background: var(--color-sun);
+  color: var(--color-ink);
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1480px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+@utility section-y {
+  padding-block: clamp(4.5rem, 10vw, 9.5rem);
+}
+
+/* Wide, heavy Archivo: the athletic, numbered-jersey voice of the system. */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 116%;
+  letter-spacing: -0.028em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+@utility display-xl {
+  font-size: clamp(2.6rem, 7.4vw, 7rem);
+}
+
+@utility display-lg {
+  font-size: clamp(2.25rem, 5.4vw, 5rem);
+}
+
+@utility display-md {
+  font-size: clamp(1.75rem, 3.4vw, 3.1rem);
+  line-height: 1.04;
+}
+
+@utility display-sm {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@utility label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-stretch: 112%;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+@utility lead {
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.5;
+}
+
+/* Scroll reveal: CSS only, so content is never hidden if scripts fail. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 26%;
+    }
+  }
+
+  .enter {
+    animation: enter-rise 0.8s var(--ease-out-athletic) both;
+  }
+  .enter-2 {
+    animation-delay: 0.1s;
+  }
+  .enter-3 {
+    animation-delay: 0.2s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+@keyframes enter-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Mobile menu uses the native dialog for its focus trap and Escape handling. */
+dialog.menu {
+  width: 100%;
+  max-width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: var(--color-navy);
+  color: #fff;
+}
+
+dialog.menu[open] {
+  animation: menu-in 0.28s var(--ease-out-athletic);
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
