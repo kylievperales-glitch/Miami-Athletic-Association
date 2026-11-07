@@ -69,7 +69,7 @@ export default function About() {
         <div className="on-dark bg-pine px-[clamp(1.25rem,4vw,3.5rem)] py-16 text-white lg:py-24">
           <div className="reveal">
             <h2 className="label text-sun">Our Vision</h2>
-            <p className="lead mt-8 max-w-[34ch] font-medium lg:text-[1.75rem] lg:leading-[1.3]">
+            <p className="display display-md mt-8 max-w-[22ch]">
               A Miami where sports and athletic experiences bring communities together, strengthen industry connections,
               and contribute to the city&apos;s identity as a destination for participation and competition.
             </p>
