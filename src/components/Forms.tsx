@@ -5,7 +5,7 @@ import { org } from "@/content/site";
 import { deliver, isConnected, validateField, type Delivery, type FormConfig, type FieldConfig } from "@/lib/forms";
 import { Arrow, cx } from "@/components/ui";
 
-const control =
+export const control =
   "w-full border border-ink/35 bg-white px-4 py-3 text-base text-ink transition-colors placeholder:text-muted hover:border-ink focus:border-blue aria-[invalid=true]:border-[#b3261e]";
 
 function Field({

@@ -53,8 +53,8 @@ export function Header() {
               href={item.href}
               aria-current={isActive(path, item.href) ? "page" : undefined}
               className={cx(
-                "relative px-3.5 py-2 font-display text-[0.9rem] font-medium [font-stretch:106%] transition-colors hover:text-blue",
-                "after:absolute after:inset-x-3.5 after:bottom-0.5 after:h-0.5 after:origin-left after:bg-green after:transition-transform after:duration-300",
+                "relative px-2.5 py-2 font-display xl:px-3.5 text-[0.9rem] font-medium [font-stretch:106%] transition-colors hover:text-blue",
+                "after:absolute after:inset-x-2.5 xl:after:inset-x-3.5 after:bottom-0.5 after:h-0.5 after:origin-left after:bg-green after:transition-transform after:duration-300",
                 isActive(path, item.href) ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100",
               )}
             >
@@ -64,7 +64,7 @@ export function Header() {
           <Link
             href="/get-involved"
             aria-current={isActive(path, "/get-involved") ? "page" : undefined}
-            className="ml-3 inline-flex min-h-11 items-center bg-blue px-5 font-display text-[0.9rem] font-semibold text-white transition-colors [font-stretch:106%] hover:bg-navy"
+            className="ml-2 inline-flex min-h-11 xl:ml-3 items-center bg-blue px-5 font-display text-[0.9rem] font-semibold text-white transition-colors [font-stretch:106%] hover:bg-navy"
           >
             Get Involved
           </Link>

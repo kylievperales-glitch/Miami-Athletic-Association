@@ -188,20 +188,20 @@ export default function Events() {
         </div>
       </section>
 
-      {/* Future calendar */}
+      {/* Calendar */}
       <section className="border-b border-line bg-white py-14 lg:py-20">
         <div className="wrap grid gap-6 lg:grid-cols-12 lg:items-center">
           <div className="reveal lg:col-span-6">
-            <Eyebrow className="mb-4 text-green">Looking Ahead</Eyebrow>
+            <Eyebrow className="mb-4 text-green">Miami Sports &amp; Fitness Calendar</Eyebrow>
             <h2 className="display display-md">A More Connected Miami Events Calendar.</h2>
           </div>
           <div className="reveal lg:col-span-5 lg:col-start-8">
             <p className="text-muted">
-              MAA is exploring ways to make it easier to discover sports, fitness, and community experiences taking place
-              across Miami.
+              Discover sporting events, fitness experiences, competitions, and community gatherings happening across Miami,
+              or submit your own event for consideration.
             </p>
-            <div className="mt-4">
-              <Status>In Exploration</Status>
+            <div className="mt-6">
+              <Button href="/calendar">Explore the Calendar</Button>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Instrument_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HideOnAdmin } from "@/components/HideOnAdmin";
 import { org } from "@/content/site";
 import { pageMeta, siteUrl } from "@/lib/metadata";
 import "./globals.css";
@@ -26,9 +27,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
-        <Header />
+        <HideOnAdmin>
+          <Header />
+        </HideOnAdmin>
         <main id="main">{children}</main>
-        <Footer />
+        <HideOnAdmin>
+          <Footer />
+        </HideOnAdmin>
       </body>
     </html>
   );

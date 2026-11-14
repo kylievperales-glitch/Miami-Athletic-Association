@@ -54,3 +54,13 @@ key private, plus spam protection.
 
 No production domain is set. Set `NEXT_PUBLIC_SITE_URL` once one exists, so canonical URLs, Open Graph URLs, the sitemap
 and robots use it. On Vercel the project URL is used until then.
+
+## Calendar and dashboard
+
+Setup steps are in `SETUP-CALENDAR.md`. Still open:
+
+- Supabase project, and the two admin accounts (yours and Kevin's)
+- A domain for sending email, verified in Resend. Until then no notification emails are sent
+- Kevin's address for new-submission alerts (`ADMIN_NOTIFICATION_EMAILS`)
+- Newsletter consent from event submitters is stored with a timestamp in `event_private`, but is not yet passed to any
+  mailing list
